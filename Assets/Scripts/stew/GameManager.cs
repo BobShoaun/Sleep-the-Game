@@ -52,13 +52,15 @@ public class GameManager : MonoBehaviour
         if (!timeManager.IsPaused && DidGameEnd()){
             // Game Over
             timeManager.IsPaused = true;
-            MenuManager.Instance.GameEnd();
             
             // High Scores
-            if (!PlayerPrefs.HasKey(HIGH_SCORE_PLAYER_PREFS) || SleepMeter > PlayerPrefs.GetInt(HIGH_SCORE_PLAYER_PREFS)) {
+            if (SleepMeter > GetHighScore())
+            {
                 Debug.Log($"New High SCORE! --> {SleepMeter}");
-                PlayerPrefs.SetInt(HIGH_SCORE_PLAYER_PREFS, SleepMeter);
+                SetHighScore(SleepMeter);
             }
+
+            MenuManager.Instance.GameEnd();
         }
     }
 
@@ -69,5 +71,20 @@ public class GameManager : MonoBehaviour
 
     public bool DidBeatThreshold() {
         return SleepMeter >= SleepometerWinThreshold;
+    }
+
+    public int GetHighScore()
+    {
+        if (!PlayerPrefs.HasKey(HIGH_SCORE_PLAYER_PREFS))
+        {
+            return 0;
+        }
+
+        return PlayerPrefs.GetInt(HIGH_SCORE_PLAYER_PREFS);
+    }
+
+    public void SetHighScore(int newHighScore)
+    {
+        PlayerPrefs.SetInt(HIGH_SCORE_PLAYER_PREFS, newHighScore);
     }
 }

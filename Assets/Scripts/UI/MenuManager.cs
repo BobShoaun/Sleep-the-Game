@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
             LoseGame();
         }
 
-        _yourBestSleepText.text = $"Your best sleep was ??? minutes.";
+        _yourBestSleepText.text = $"Your best sleep was {GameManager.Instance.GetHighScore()} minutes.";
         _gameOverMenu.gameObject.SetActive(true);
     }
 
@@ -109,6 +109,11 @@ public class MenuManager : MonoBehaviour
         _gameEndText.text = GetRandomPhrase(_enoughSleepPhrases);
         _gameEndText.color = _enoughSleepColor;
         _youSleptForText.text = $"You slept for {GameManager.Instance.SleepMeter} minutes!";
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     #endregion

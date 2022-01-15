@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_SizeDelta: {x: -20, y: -4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1034376183277278785
 CanvasRenderer:
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.35
+  m_fontSize: 18.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38203096, g: 0.8632699, b: 0.9528302, a: 1}
+  m_Color: {r: 0.089711644, g: 0.5463367, b: 0.9056604, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -274,7 +274,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.25511748, g: 0.7064002, b: 0.8584906, a: 1}
+    m_NormalColor: {r: 0.09019608, g: 0.54509807, b: 0.90588236, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -316,9 +316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9bc7d2d676ee6b4cbdc61328dffe4f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sleepBarSlider: {fileID: 0}
-  _sleepQuantityText: {fileID: 0}
-  _maxSleepQuantity: 0
+  _sleepQuantityText: {fileID: 5663422987811538776}
+  _sleepBarFillImage: {fileID: 6423737187933058007}
+  _lowSleepColor: {r: 0.09019608, g: 0.54509807, b: 0.90588236, a: 1}
+  _highSleepColor: {r: 0.25640798, g: 0.8113208, b: 0.35033622, a: 1}
 --- !u!1 &5305692632689374648
 GameObject:
   m_ObjectHideFlags: 0
