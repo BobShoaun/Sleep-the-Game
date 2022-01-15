@@ -20,7 +20,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private Transform lightSource;
     [SerializeField]
-    private Slider timeSlider;
+    private Image timeSlider;
 
     public bool IsPaused {
         get; set;
@@ -31,8 +31,7 @@ public class TimeManager : MonoBehaviour
         this.lightSource.eulerAngles = startingLightRotation;
         
         if (this.timeSlider != null) {
-            this.timeSlider.minValue = 0;
-            this.timeSlider.maxValue = 1;
+            this.timeSlider.fillAmount = 0;
         }
     }
 
@@ -45,7 +44,7 @@ public class TimeManager : MonoBehaviour
         Debug.Log(this.NightProgress);
         
         if (this.timeSlider != null) {
-            this.timeSlider.value = this.NightProgress;
+            this.timeSlider.fillAmount = this.NightProgress;
         }
         
         float new_x = Mathf.Lerp(startingLightRotation.x, endingLightRotation.x, this.NightProgress);
