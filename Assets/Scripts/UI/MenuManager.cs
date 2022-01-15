@@ -62,14 +62,14 @@ public class MenuManager : MonoBehaviour
 
     public void PauseGame()
     {
-        Cursor.lockState = CursorLockMode.None;
+        // Cursor.lockState = CursorLockMode.None;
         _pauseMenu.gameObject.SetActive(true);
         GameManager.Instance.SetPause(true);
     }
 
     public void UnpauseGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.lockState = CursorLockMode.Locked;
         _pauseMenu.gameObject.SetActive(false);
         GameManager.Instance.SetPause(false);
     }
@@ -85,7 +85,7 @@ public class MenuManager : MonoBehaviour
 
     public void GameEnd()
     {
-        Cursor.lockState = CursorLockMode.None;
+        // Cursor.lockState = CursorLockMode.None;
         _pauseMenu.gameObject.SetActive(false);
 
         // Set game end text
