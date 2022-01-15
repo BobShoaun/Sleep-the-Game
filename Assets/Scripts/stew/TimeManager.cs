@@ -19,6 +19,10 @@ public class TimeManager : MonoBehaviour
     [SerializeField]
     private Transform lightSource;
 
+    public bool IsPaused {
+        get; set;
+    }
+
     void Start()
     {
         this.lightSource.eulerAngles = startingLightRotation;
@@ -26,6 +30,9 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
+        if (IsPaused)
+            return;
+
         this.NightProgress += Time.deltaTime / this.nightDurationSeconds;
         Debug.Log(this.NightProgress);
         
