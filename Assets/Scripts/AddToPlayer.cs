@@ -43,7 +43,7 @@ public class AddToPlayer : MonoBehaviour
             //         break;
             //     }
             // }
-            if (hitColliders) 
+            if (hitColliders.Length > 0) 
             {
                 timeLeft = -1;
                 sleeping = false;
