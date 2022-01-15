@@ -90,5 +90,6 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause() {
         timeManager.IsPaused = !timeManager.IsPaused;
+        Time.timeScale = timeManager.IsPaused ? 0 : 1;
     }
 }
