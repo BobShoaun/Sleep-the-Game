@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -18,7 +15,9 @@ public class GameManager : MonoBehaviour
         set {
             if (value >= 0) {
                 _sleepMeter = value;
-                Sleepometer.Instance.UpdateSleepQuantity(value);
+                if (Sleepometer.Instance != null){
+                    Sleepometer.Instance.UpdateSleepQuantity(value);
+                }
             }
         }
     }
