@@ -63,11 +63,13 @@ public class MenuManager : MonoBehaviour
     public void PauseGame()
     {
         _pauseMenu.gameObject.SetActive(true);
+        GameManager.Instance.SetPause(true);
     }
 
     public void UnpauseGame()
     {
         _pauseMenu.gameObject.SetActive(false);
+        GameManager.Instance.SetPause(false);
     }
 
     public void QuitGame()
@@ -81,7 +83,7 @@ public class MenuManager : MonoBehaviour
 
     public void GameEnd()
     {
-        UnpauseGame();
+        _pauseMenu.gameObject.SetActive(false);
 
         // Set game end text
         if (GameManager.Instance.DidBeatThreshold())
