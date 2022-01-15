@@ -10,10 +10,6 @@ public class GameManager : MonoBehaviour
     private TimeManager timeManager;
     [SerializeField]
     private int sleepMeterVictoryThreshold = 8;
-    // [SerializeField]
-    // private Slider sleepSlider;
-    // [SerializeField]
-    // private TextMeshProUGUI sleepSliderText;
 
     private int _sleepMeter;
     public int SleepMeter {
@@ -21,7 +17,9 @@ public class GameManager : MonoBehaviour
         set {
             if (value >= 0 && value <= sleepMeterVictoryThreshold) {
                 _sleepMeter = value;
-                Sleepometer.Instance.UpdateSleepQuantity(value);
+                if (Sleepometer.Instance != null){
+                    Sleepometer.Instance.UpdateSleepQuantity(value);
+                }
             }
         }
     }
