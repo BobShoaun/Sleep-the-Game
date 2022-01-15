@@ -11,7 +11,6 @@ public class Sleepometer : MonoBehaviour
 
     [SerializeField] private TMP_Text _sleepQuantityText;
     [SerializeField] private Image _sleepBarFillImage;
-    private int _maxSleepQuantity;
     private Slider _sleepBarSlider;
 
     [SerializeField] private Color _lowSleepColor;
@@ -47,7 +46,7 @@ public class Sleepometer : MonoBehaviour
         #endregion
 
         _sleepBarSlider = GetComponent<Slider>();
-        _sleepBarSlider.maxValue = _maxSleepQuantity;
+        _sleepBarSlider.maxValue = GameManager.Instance.SleepometerWinThreshold;
         _sleepBarSlider.minValue = 0;
 
         _sleepBarFillImage.color = _lowSleepColor;
