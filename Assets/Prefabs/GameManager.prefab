@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeManager: {fileID: 6808097758151225465}
   sleepMeterVictoryThreshold: 10
+  sleepSlider: {fileID: 0}
 --- !u!1001 &7696333588917502126
 PrefabInstance:
   m_ObjectHideFlags: 0

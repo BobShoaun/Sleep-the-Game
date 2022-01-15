@@ -1,25 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private TimeManager timeManager;
     [SerializeField]
-    private int sleepMeterVictoryThreshold = 10;
+    private int sleepMeterVictoryThreshold = 8;
+    // [SerializeField]
+    // private Slider sleepSlider;
+    // [SerializeField]
+    // private TextMeshProUGUI sleepSliderText;
 
-    //TODO: add serializeField to be able to read in sleep meter.
+    private int _sleepMeter;
+    public int SleepMeter {
+        get => _sleepMeter;
+        set {
+            if (value >= 0 && value <= sleepMeterVictoryThreshold) {
+                _sleepMeter = value;
+                Sleepometer.Instance.UpdateSleepQuantity(value);
+            }
+        }
+    }
 
     void Start() {
         timeManager.IsPaused = false;
+        this.SleepMeter = 0;
     }
 
     void Update() {
+        // Debug:
+        if (Input.GetKeyDown("t")) {
+            this.SleepMeter += 1;
+        }
+        if (Input.GetKeyDown("y")) {
+            this.SleepMeter -= 1;
+        }
+
         if (!timeManager.IsPaused && timeManager.NightProgress >= 1){
             // Game Over
             timeManager.IsPaused = true;
-            CheckIfWon(7);
+            CheckIfWon(this.SleepMeter);
         }
     }
 

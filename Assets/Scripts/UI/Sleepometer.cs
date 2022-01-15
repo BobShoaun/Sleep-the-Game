@@ -19,6 +19,8 @@ public class Sleepometer : MonoBehaviour
         else Destroy(gameObject);
 
         _sleepBarSlider = GetComponent<Slider>();
+        _sleepBarSlider.maxValue = MaxSleepQuantity;
+        _sleepBarSlider.minValue = 0;
     }
 
     public void UpdateSleepQuantity(int currentSleep)
