@@ -164,7 +164,7 @@ MonoBehaviour:
   m_LockStageInInspector: 00000000
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 1
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -192,7 +192,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112465458}
-  m_LocalRotation: {x: 0.44721362, y: 0.00000001538986, z: -0.000000007694931, w: 0.89442724}
+  m_LocalRotation: {x: 0.4472136, y: -0.00000001538985, z: 0.000000007694926, w: 0.89442724}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -212,9 +212,9 @@ GameObject:
   - component: {fileID: 146785419}
   - component: {fileID: 146785421}
   - component: {fileID: 146785420}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Third Person Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_LockStageInInspector: 00000000
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 1
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 667063337}
   - component: {fileID: 667063340}
   - component: {fileID: 667063341}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Me
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -917,6 +917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643073420}
   - component: {fileID: 1643073419}
+  - component: {fileID: 1643073421}
   m_Layer: 0
   m_Name: Third Person Camera
   m_TagString: Untagged
@@ -941,7 +942,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 1
   m_LookAt: {fileID: 146785419}
   m_Follow: {fileID: 146785419}
   m_CommonLens: 1
@@ -1046,6 +1047,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643073421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643073418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 1
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1 &1786552121
 GameObject:
   m_ObjectHideFlags: 3
@@ -1250,7 +1281,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904409059}
-  m_LocalRotation: {x: 0.43087047, y: 0.000000015542836, z: -0.000000007406815, w: 0.90241385}
+  m_LocalRotation: {x: 0.43087047, y: -0.000000015542836, z: 0.000000007406815, w: 0.90241385}
   m_LocalPosition: {x: 0, y: 4.707, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1333,7 +1364,7 @@ MonoBehaviour:
   m_LockStageInInspector: 00000000
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_StandbyUpdate: 2
+  m_StandbyUpdate: 1
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
@@ -1361,7 +1392,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911824099}
-  m_LocalRotation: {x: 0.43087044, y: 0.000000015527274, z: -0.0000000074137203, w: 0.9024138}
+  m_LocalRotation: {x: 0.43087044, y: -0.000000015527275, z: 0.0000000074137207, w: 0.9024138}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1382,7 +1413,7 @@ GameObject:
   - component: {fileID: 2042280577}
   - component: {fileID: 2042280576}
   - component: {fileID: 2042280575}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
