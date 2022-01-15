@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class TimeManager : MonoBehaviour
     private int nightDurationSeconds = 300;
     [SerializeField]
     private Transform lightSource;
+    [SerializeField]
+    private Slider timeSlider;
 
     public bool IsPaused {
         get; set;
@@ -26,6 +29,11 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         this.lightSource.eulerAngles = startingLightRotation;
+        
+        if (this.timeSlider != null) {
+            this.timeSlider.minValue = 0;
+            this.timeSlider.maxValue = 1;
+        }
     }
 
     void Update()
@@ -35,6 +43,10 @@ public class TimeManager : MonoBehaviour
 
         this.NightProgress += Time.deltaTime / this.nightDurationSeconds;
         Debug.Log(this.NightProgress);
+        
+        if (this.timeSlider != null) {
+            this.timeSlider.value = this.NightProgress;
+        }
         
         float new_x = Mathf.Lerp(startingLightRotation.x, endingLightRotation.x, this.NightProgress);
         float new_y = Mathf.Lerp(startingLightRotation.y, endingLightRotation.y, this.NightProgress);
