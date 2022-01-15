@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private TimeManager timeManager;
-    [SerializeField]
-    private int sleepMeterVictoryThreshold = 8;
+    public static GameManager Instance;
+
+    public int SleepometerWinThreshold = 8;
+
+    [SerializeField] private TimeManager timeManager;
 
     private int _sleepMeter;
     public int SleepMeter {
         get => _sleepMeter;
         set {
-            if (value >= 0 && value <= sleepMeterVictoryThreshold) {
+            if (value >= 0) {
                 _sleepMeter = value;
                 if (Sleepometer.Instance != null){
                     Sleepometer.Instance.UpdateSleepQuantity(value);
@@ -21,32 +22,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Start() {
+    private void Awake()
+    {
+        #region Singleton
+
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+        
+        #endregion
+    }
+
+    void Start() 
+    {
         timeManager.IsPaused = false;
-        this.SleepMeter = 0;
+        SleepMeter = 0;
     }
 
     void Update() {
         // Debug:
         if (Input.GetKeyDown("t")) {
-            this.SleepMeter += 1;
+            SleepMeter += 1;
         }
         if (Input.GetKeyDown("y")) {
-            this.SleepMeter -= 1;
+            SleepMeter -= 1;
         }
 
-        if (!timeManager.IsPaused && timeManager.NightProgress >= 1){
+        if (!timeManager.IsPaused && DidGameEnd()){
             // Game Over
             timeManager.IsPaused = true;
-            CheckIfWon(this.SleepMeter);
+            MenuManager.Instance.GameEnd();
         }
     }
 
-    public void CheckIfWon(int sleepMeter) {
-        if (sleepMeter >= this.sleepMeterVictoryThreshold) {
-            Debug.Log("Won!!");
-        } else {
-            Debug.Log("LOST!!! :(");
-        }
+    public bool DidGameEnd()
+    {
+        return timeManager.NightProgress >= 1;
+    }
+
+    public bool DidBeatThreshold() {
+        return SleepMeter >= SleepometerWinThreshold;
     }
 }
