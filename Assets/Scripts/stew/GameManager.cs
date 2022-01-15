@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TimeManager timeManager;
     [SerializeField]
-    private float sleepMeterVictoryThreshold = 0.8f;
+    private int sleepMeterVictoryThreshold = 10;
+
+    //TODO: add serializeField to be able to read in sleep meter.
 
     void Start() {
         timeManager.IsPaused = false;
@@ -17,11 +19,11 @@ public class GameManager : MonoBehaviour
         if (!timeManager.IsPaused && timeManager.NightProgress >= 1){
             // Game Over
             timeManager.IsPaused = true;
-            CheckIfWon(0.7f);
+            CheckIfWon(7);
         }
     }
 
-    public void CheckIfWon(float sleepMeter) {
+    public void CheckIfWon(int sleepMeter) {
         if (sleepMeter >= this.sleepMeterVictoryThreshold) {
             Debug.Log("Won!!");
         } else {
