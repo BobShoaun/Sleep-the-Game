@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0039957617, g: 0.00021793062, b: 0.000000051509936, a: 1}
+  m_IndirectSpecularColor: {r: 0.0039957603, g: 0.00021793031, b: 0.000000051509936, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -176,7 +176,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1254826, y: 1}
+    m_SensorSize: {x: 2.1420233, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -192,8 +192,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112465458}
-  m_LocalRotation: {x: 0.4386361, y: -7.1916507e-16, z: -3.962135e-16, w: 0.89866483}
-  m_LocalPosition: {x: 0, y: -0.15481997, z: -0.0005350113}
+  m_LocalRotation: {x: 0.44721362, y: -0.000000015389855, z: 0.000000007694927, w: 0.89442724}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -581,7 +581,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1254826, y: 1}
+    m_SensorSize: {x: 2.1420233, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -597,7 +597,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552853346}
-  m_LocalRotation: {x: 0.4144284, y: -0.000000016654278, z: 0.00000000758394, w: 0.9100819}
+  m_LocalRotation: {x: 0.41442844, y: -2.5943541e-15, z: 1.7525013e-15, w: 0.9100819}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -649,6 +649,10 @@ PrefabInstance:
       propertyPath: musicLullaby
       value: 
       objectReference: {fileID: 165792422}
+    - target: {fileID: 1959542236793925004, guid: 912c510f2a95f0d4ab63f9d751f49421, type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3325840630132232208, guid: 912c510f2a95f0d4ab63f9d751f49421, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1437,6 +1441,10 @@ PrefabInstance:
     - target: {fileID: 7189811220325564906, guid: e391d4760ded69053aff5a9db9545b50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8612566795926647890, guid: e391d4760ded69053aff5a9db9545b50, type: 3}
+      propertyPath: SleepometerWinThreshold
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e391d4760ded69053aff5a9db9545b50, type: 3}
@@ -2493,7 +2501,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1254826, y: 1}
+    m_SensorSize: {x: 2.1420233, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2824,7 +2832,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904409059}
-  m_LocalRotation: {x: 0.43087044, y: -0.00000002556238, z: 0.000000012197457, w: 0.9024138}
+  m_LocalRotation: {x: 0.43087044, y: 0.00000001553286, z: -0.000000007410962, w: 0.9024138}
   m_LocalPosition: {x: 0, y: 5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2924,7 +2932,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1254826, y: 1}
+    m_SensorSize: {x: 2.1420233, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2940,7 +2948,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911824099}
-  m_LocalRotation: {x: 0.4308704, y: -0.00000002555403, z: 0.000000012201138, w: 0.90241385}
+  m_LocalRotation: {x: 0.43087044, y: 0.000000015527274, z: -0.0000000074137207, w: 0.9024138}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
