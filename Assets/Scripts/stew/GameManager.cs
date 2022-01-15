@@ -87,4 +87,8 @@ public class GameManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(HIGH_SCORE_PLAYER_PREFS, newHighScore);
     }
+
+    public void TogglePause() {
+        timeManager.IsPaused = !timeManager.IsPaused;
+    }
 }
