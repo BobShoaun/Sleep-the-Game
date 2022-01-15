@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private const string HIGH_SCORE_PLAYER_PREFS = "pprefs_high_score";
+
     private void Awake()
     {
         #region Singleton
@@ -51,6 +53,12 @@ public class GameManager : MonoBehaviour
             // Game Over
             timeManager.IsPaused = true;
             MenuManager.Instance.GameEnd();
+            
+            // High Scores
+            if (!PlayerPrefs.HasKey(HIGH_SCORE_PLAYER_PREFS) || SleepMeter > PlayerPrefs.GetInt(HIGH_SCORE_PLAYER_PREFS)) {
+                Debug.Log($"New High SCORE! --> {SleepMeter}");
+                PlayerPrefs.SetInt(HIGH_SCORE_PLAYER_PREFS, SleepMeter);
+            }
         }
     }
 
